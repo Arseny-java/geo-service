@@ -7,19 +7,22 @@ import ru.netology.entity.Country;
 class LocalizationServiceImplTest {
 
     @Test
-    void locale() {
+    void localeRus() {
         Country RUS = Country.RUSSIA;
-        Country USA = Country.USA;
         String expectedRus = "Добро пожаловать";
-        String expectedUSA = "Welcome";
-
         LocalizationServiceImpl localizationService = new LocalizationServiceImpl();
-
         String actualRus = localizationService.locale(RUS);
-        String actualUSA = localizationService.locale(USA);
 
         Assertions.assertEquals(actualRus, expectedRus);
-        Assertions.assertEquals(actualUSA, expectedUSA);
+    }
 
+    @Test
+    void localeUSA() {
+        Country USA = Country.USA;
+        String expectedUSA = "Welcome";
+        LocalizationServiceImpl localizationService = new LocalizationServiceImpl();
+        String actualUSA = localizationService.locale(USA);
+
+        Assertions.assertEquals(actualUSA, expectedUSA);
     }
 }
